@@ -1,10 +1,11 @@
 require 'sinatra'
+require 'sinatra/cross_origin'
 
 configure do
   enable :cross_origin
-end
 
-set :allow_origin, :any
+  set :allow_origin, :any
+end
 
 get '/countries.json' do
   content_type 'application/json'
