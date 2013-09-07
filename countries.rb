@@ -1,6 +1,6 @@
 require 'sinatra'
 
-get '/' do
-  send_file 'countries.json', :disposition => 'inline', :type => 'application/json'
+get '/countries.json' do
+  content_type 'application/json'
+  File.open('countries.json', 'r').readlines
 end
-
